@@ -8,9 +8,19 @@
  */
 
 const solution = (num, i = 2) => {
-  return true
-}
+  if (num < 2) {
+    return false;
+  }
+
+  if (i > Math.sqrt(num)) {
+    return true;
+  }
+  if (num % i === 0) {
+    return false;
+  }
+  return solution(num, i + 1);
+};
 
 module.exports = {
-  solution
-}
+  solution,
+};
