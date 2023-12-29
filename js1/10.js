@@ -18,9 +18,17 @@
  */
 
 const solution = (str, fun) => {
-  return () => { }
-}
+  let i = 0;
+  return () => {
+    if (i === str.length) {
+      i = 0;
+    }
+    const result = fun(str[i]);
+    i++;
+    return result;
+  };
+};
 
 module.exports = {
-  solution
-}
+  solution,
+};
